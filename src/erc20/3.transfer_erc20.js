@@ -1,7 +1,7 @@
 var ethers = require("ethers");
 require('dotenv').config({ path: require('find-config')('.env') })
 //Contract Details
-const artifact = require("./contracts/FT.json");
+const artifact = require("../contracts/FT.json");
 
 //Instantiations
 var url = process.env.PROVIDER_NETWORK;
@@ -10,7 +10,7 @@ const address2 = process.env.PUBLIC_ADDRESS_2;
 
 var provider = new ethers.providers.JsonRpcProvider(url);
 const privateKey = process.env.PRIVATE_KEY_1;
-const ftAddress = process.env.CONTRACT_ADDRESS;
+const ftAddress = process.env.FT_CONTRACT_ADDRESS;
 
 const wallet = new ethers.Wallet(privateKey, provider);
 const contract = new ethers.Contract(ftAddress, artifact.abi, wallet);

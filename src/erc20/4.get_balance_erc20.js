@@ -1,11 +1,11 @@
 var ethers = require("ethers");
 require('dotenv').config({ path: require('find-config')('.env') })
-const artifact = require("./contracts/FT.json");
+const artifact = require("../contracts/FT.json");
 
 var url = process.env.PROVIDER_NETWORK;
 const address1 = process.env.PUBLIC_ADDRESS_1; 
 const address2 = process.env.PUBLIC_ADDRESS_2;
-const ftAddress = process.env.CONTRACT_ADDRESS; 
+const ftAddress = process.env.FT_CONTRACT_ADDRESS; 
 
 var provider = new ethers.providers.JsonRpcProvider(url);
 

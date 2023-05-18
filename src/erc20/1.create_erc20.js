@@ -9,7 +9,7 @@ var provider = new ethers.providers.JsonRpcProvider(url);
 const privateKey = process.env.PRIVATE_KEY_1;
 
 //Contract details
-const artifact = require("./contracts/FT.json");
+const artifact = require("../contracts/FT.json");
 const initialBalance = ethers.utils.parseEther("10000.0");
 const contractConstructorArgs = [initialBalance];
 
@@ -29,7 +29,7 @@ const amount = ethers.utils.parseUnits("100.0", 18);
 
   //You can now add the contract address to the .env file (ftAddress)
   console.log(
-    `Success! You can now update your .env file: CONTRACT_ADDRESS=${contract.address}`
+    `Success! You can now update your .env file: FT_CONTRACT_ADDRESS=${contract.address}`
   );
 
   //You can inspect the token transfer activity on Etherscan

@@ -6,9 +6,9 @@ const toAddress = process.env.PUBLIC_ADDRESS_2;
 var provider = new ethers.providers.JsonRpcProvider(url);
 const privateKey = process.env.PRIVATE_KEY_1;
 
-const contractAdd = "0xd984B54f75eDC26752Eb2671B1874b238A351197";
+const ftAddress = process.env.FT_CONTRACT_ADDRESS; 
 //Contract details
-const artifact = require("./contracts/FT.json");
+const artifact = require("../contracts/FT.json");
 const signer = new ethers.Wallet(privateKey, provider);
 const factory = new ethers.ContractFactory(
   artifact.abi,
@@ -24,7 +24,7 @@ const factory = new ethers.ContractFactory(
   ]);
 
   const tx = await signer.sendTransaction({
-    to: contractAdd,
+    to: ftAddress,
     from: signer.address,
     value: ethers.utils.parseUnits("0.000", "ether"),
     data: data,
