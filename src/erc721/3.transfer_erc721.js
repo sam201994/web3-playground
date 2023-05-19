@@ -17,8 +17,9 @@ const contract = new ethers.Contract(ft721Address, artifact.abi, wallet);
 
 //Transfer a token from wallet holder (account2) to account1
 (async function () {
-  let transaction = await contract.transferFrom(address2, address1, 2);
+  let transaction = await contract.transferFrom(address2, address1, 6);
   let result = await transaction.wait();
+
 
   //You can inspect transaction on Etherscan
   console.log(`https:///mumbai.polygonscan.com/tx/${result.transactionHash}`);
